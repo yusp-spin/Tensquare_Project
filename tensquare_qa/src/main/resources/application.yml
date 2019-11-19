@@ -1,0 +1,32 @@
+server:
+  port: 9003    # 指定端口
+
+spring:
+  application:
+    name: tensquare-qa   # 模块名
+  datasource:   # 配置数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/tensquare_qa?useUnicode=true&characterEncoding=utf8&SSL=true&serverTimezone=UTC
+    username: root
+    password: yu24019960724
+  jpa:      # 配置jpa
+    database: mysql
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+jwt:
+  config:
+    key: itcast
+    ttl: 3600000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true #不走线上的时候模块之间的跨域访问
+feign:
+  hystrix:
+    enabled: true

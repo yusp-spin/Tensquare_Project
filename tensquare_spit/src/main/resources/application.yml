@@ -1,0 +1,19 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: tensquare-spit
+  data:
+    mongodb:
+      host: 127.0.0.1
+      database: spitdb
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true #不走线上的时候模块之间的跨域访问
